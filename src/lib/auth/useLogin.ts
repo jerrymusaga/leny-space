@@ -1,8 +1,8 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { useAddress, useSDK } from "@thirdweb-dev/react";
 import { useAuthenticateMutation } from "../../graphql/generated";
-import generateChallenge from "./generateChallenge";
-import { setAccessToken } from "./helpers";
+import generateChallenge from "../auth/generateChallenge";
+// import { setAccessToken } from "./helpers";
 
 export default function useLogin() {
   const address = useAddress();
@@ -30,13 +30,13 @@ export default function useLogin() {
 
     // 4. Receive a access token from the Lens API if  we succeed
     // 5. Store the access token inside local storage so we can use it.
-    const { accessToken, refreshToken } = authenticate;
+    // const { accessToken, refreshToken } = authenticate;
 
-    setAccessToken(accessToken, refreshToken);
+    // setAccessToken(accessToken, refreshToken);
 
-    // Now, let's ask react query to refetch the cache key
-    // Refetch this cache key:  ["lens-user", address],
-    client.invalidateQueries(["lens-user", address]);
+    // // Now, let's ask react query to refetch the cache key
+    // // Refetch this cache key:  ["lens-user", address],
+    // client.invalidateQueries(["lens-user", address]);
   }
 
   // 2. Return the useMutation hook wrapping the async function

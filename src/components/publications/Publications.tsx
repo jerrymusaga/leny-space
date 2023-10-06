@@ -2,8 +2,7 @@ import { MediaRenderer } from "@thirdweb-dev/react";
 import Link from "next/link";
 import React from "react";
 import { ExplorePublicationsQuery } from "../../graphql/generated";
-import PublicationLeftContent from "./PublicationLeftContent";
-import PublicationRightContent from "./PublicationRIghtContent";
+
 type Props = {
   publication: ExplorePublicationsQuery["explorePublications"]["items"][0];
 };
@@ -49,7 +48,7 @@ export default function Publications({ publication }: Props) {
       </header>
       {/* Body */}
       <div className="text-sm text-slate-800 space-y-2 mb-5">
-        <h4>{publication.metadata.name}</h4>
+        <h2>{publication.metadata.name}</h2>
         <p>{publication.metadata.content}</p>
         <div className="relative !my-4">
           {/* Image / media of the post if there is one */}

@@ -68,7 +68,9 @@ export default function WalletConnect({}: Props) {
             borderRadius: "50%",
           }}
         />
-        {profileQuery?.data?.defaultProfile?.handle || ""}
+        <Link href={`my-profile/${profileQuery?.data?.defaultProfile?.handle}`}>
+          {profileQuery?.data?.defaultProfile?.handle || ""}
+        </Link>
       </div>
     );
   }

@@ -3,9 +3,8 @@ import {
   PublicationSortCriteria,
   PublicationMainFocus,
 } from "../graphql/generated";
-import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
+import { useAddress } from "@thirdweb-dev/react";
 import useLogin from "../lib/auth/useLogin";
-import WalletConnect from "../components/WalletConnect";
 import Publications from "../components/publications/Publications";
 import { MediaRenderer } from "@thirdweb-dev/react";
 import PublicationLeftContent from "../components/publications/PublicationLeftContent";

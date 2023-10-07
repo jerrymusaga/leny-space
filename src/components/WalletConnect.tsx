@@ -9,6 +9,7 @@ import {
 import React from "react";
 import useLensUser from "../lib/auth/useLensUser";
 import useLogin from "../lib/auth/useLogin";
+import Link from "next/link";
 
 type Props = {};
 
@@ -27,7 +28,7 @@ export default function WalletConnect({}: Props) {
   // 2. User needs to switch network to Polygon
   if (isOnWrongNetwork) {
     return (
-      <button onClick={() => switchNetwork?.(ChainId.Mumbai)}>
+      <button onClick={() => switchNetwork?.(ChainId.Polygon)}>
         Switch Network
       </button>
     );
@@ -50,7 +51,7 @@ export default function WalletConnect({}: Props) {
 
   // If it's done loading and there's no default profile
   if (!profileQuery.data?.defaultProfile) {
-    return <div>Create a Lens Profile.</div>;
+    return <Link href="https://claim.lens.xyz/">Create a Lens Profile.</Link>;
   }
 
   // If it's done loading and there's a default profile
@@ -67,6 +68,7 @@ export default function WalletConnect({}: Props) {
             borderRadius: "50%",
           }}
         />
+        {profileQuery?.data?.defaultProfile?.handle || ""}
       </div>
     );
   }

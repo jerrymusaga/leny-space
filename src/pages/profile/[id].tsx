@@ -3,11 +3,11 @@ import { useProfileQuery, usePublicationsQuery } from "../../graphql/generated";
 import { useRouter } from "next/router";
 import { MediaRenderer, Web3Button } from "@thirdweb-dev/react";
 import Link from "next/link";
-// import {
-//   LENS_CONTRACT_ABI,
-//   LENS_CONTRACT_ADDRESS,
-// } from "../../const/contracts";
-// import { useFollow } from "../../lib/useFollow";
+import {
+  LENS_CONTRACT_ABI,
+  LENS_CONTRACT_ADDRESS,
+} from "../../const/contracts";
+import { useFollow } from "../../lib/useFollow";
 
 type Props = {};
 
@@ -16,7 +16,7 @@ export default function ProfilePage({}: Props) {
   // Grab the path / [id] field from the URL
   const { id } = router.query;
 
-  //   const { mutateAsync: followUser } = useFollow();
+  const { mutateAsync: followUser } = useFollow();
 
   const {
     isLoading: loadingProfile,
@@ -167,6 +167,15 @@ export default function ProfilePage({}: Props) {
               >
                 carolinmcneail.com
               </a>
+            </div>
+            <div className="flex items-center">
+              <Web3Button
+                contractAddress={LENS_CONTRACT_ADDRESS}
+                contractAbi={LENS_CONTRACT_ABI}
+                action={async () => await followUser(profileData?.profile?.id)}
+              >
+                Follow
+              </Web3Button>
             </div>
           </div>
         </header>

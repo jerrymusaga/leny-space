@@ -1,6 +1,7 @@
 import {
   useExplorePublicationsQuery,
   PublicationSortCriteria,
+  PublicationMainFocus,
 } from "../graphql/generated";
 import { ConnectWallet, useAddress } from "@thirdweb-dev/react";
 import useLogin from "../lib/auth/useLogin";
@@ -18,6 +19,9 @@ export default function Home() {
     {
       request: {
         sortCriteria: PublicationSortCriteria.Latest,
+        metadata: {
+          mainContentFocus: PublicationMainFocus.Article,
+        },
       },
     },
     {

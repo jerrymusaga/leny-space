@@ -1,4 +1,5 @@
 import React from "react";
+import WalletConnect from "../WalletConnect";
 
 function PublicationLeftContent() {
   return (
@@ -110,7 +111,7 @@ function PublicationLeftContent() {
                       <path d="M12.311 9.527c-1.161-.393-1.85-.825-2.143-1.175A3.991 3.991 0 0012 5V4c0-2.206-1.794-4-4-4S4 1.794 4 4v1c0 1.406.732 2.639 1.832 3.352-.292.35-.981.782-2.142 1.175A3.942 3.942 0 001 13.26V16h14v-2.74c0-1.69-1.081-3.19-2.689-3.733zM6 4c0-1.103.897-2 2-2s2 .897 2 2v1c0 1.103-.897 2-2 2s-2-.897-2-2V4zm7 10H3v-.74c0-.831.534-1.569 1.33-1.838 1.845-.624 3-1.436 3.452-2.422h.436c.452.986 1.607 1.798 3.453 2.422A1.943 1.943 0 0113 13.26V14z" />
                     </svg>
                     <span className="text-sm font-medium text-slate-600">
-                      Profile
+                      <WalletConnect />
                     </span>
                   </a>
                 </li>

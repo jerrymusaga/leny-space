@@ -114,23 +114,12 @@ export default function ProfilePage({}: Props) {
                 </svg>
               </Link>
               <button className="p-1.5 shrink-0 rounded border border-slate-200 hover:border-slate-300 shadow-sm">
-                <svg
-                  className="w-4 h-4 fill-current text-indigo-500"
-                  viewBox="0 0 16 16"
-                >
-                  <path d="M8 0C3.6 0 0 3.1 0 7s3.6 7 8 7h.6l5.4 2v-4.4c1.2-1.2 2-2.8 2-4.6 0-3.9-3.6-7-8-7Zm4 10.8v2.3L8.9 12H8c-3.3 0-6-2.2-6-5s2.7-5 6-5 6 2.2 6 5c0 2.2-2 3.8-2 3.8Z" />
-                </svg>
+                {profileData?.profile?.stats?.totalFollowing}
+                <span className="ml-2">Following</span>
               </button>
               <button className="btn-sm bg-indigo-500 hover:bg-indigo-600 text-white">
-                <svg
-                  className="fill-current shrink-0"
-                  width="11"
-                  height="8"
-                  viewBox="0 0 11 8"
-                >
-                  <path d="m.457 4.516.969-.99 2.516 2.481L9.266.702l.985.99-6.309 6.284z" />
-                </svg>
-                <span className="ml-2">Following</span>
+                {profileData?.profile?.stats?.totalFollowers}
+                <span className="ml-2">Followers</span>
               </button>
             </div>
           </div>
@@ -222,140 +211,36 @@ export default function ProfilePage({}: Props) {
           <div className="space-y-5 mb-8 xl:mb-0">
             {/* Departments */}
             <div>
-              <h2 className="text-slate-800 font-semibold mb-2">Departments</h2>
+              <h2 className="text-slate-800 font-semibold mb-2">
+                Publications
+              </h2>
               {/* Cards */}
-              <div className="grid xl:grid-cols-2 gap-4">
-                {/* Card */}
-                <div className="bg-white p-4 border border-slate-200 rounded-sm shadow-sm">
-                  {/* Card header */}
-                  <div className="grow flex items-center truncate mb-2">
-                    <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-slate-700 rounded-full mr-2">
-                      <img
-                        className="ml-1"
-                        src=""
-                        width="14"
-                        height="14"
-                        alt="Icon 03"
-                      />
-                    </div>
-                    <div className="truncate">
-                      <span className="text-sm font-medium text-slate-800">
-                        Acme Marketing
-                      </span>
-                    </div>
-                  </div>
-                  {/* Card content */}
-                  <div className="text-sm mb-3">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore.
-                  </div>
-                  {/* Card footer */}
-                  <div className="flex justify-between items-center">
-                    {/* Avatars group */}
-                    <div className="flex -space-x-3 -ml-0.5">
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                    </div>
-                    {/* Link */}
-                    <div>
-                      <a
-                        className="text-sm font-medium text-indigo-500 hover:text-indigo-600"
-                        href="#0"
-                      >
-                        View -&gt;
-                      </a>
+              {publicationsData?.publications.items.map((pub) => (
+                <div className="grid xl:grid-cols-2 gap-4" key={pub.id}>
+                  <div className="bg-white p-4 border border-slate-200 rounded-sm shadow-sm">
+                    <div className="grow flex items-center truncate mb-2">
+                      <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-slate-700 rounded-full mr-2">
+                        <MediaRenderer
+                          className="ml-1"
+                          src={
+                            pub?.metadata?.image ||
+                            pub?.metadata?.media[0]?.original?.url
+                          }
+                          alt={pub?.metadata?.name || ""}
+                        />
+                      </div>
+                      <div className="truncate">
+                        <span className="text-sm font-medium text-slate-800">
+                          {pub?.metadata?.name || pub?.metadata?.content}
+                        </span>
+                      </div>
+                      <div className="text-sm mb-3">
+                        {pub?.metadata?.description || ""}
+                      </div>
                     </div>
                   </div>
                 </div>
-
-                {/* Card */}
-                <div className="bg-white p-4 border border-slate-200 rounded-sm shadow-sm">
-                  {/* Card header */}
-                  <div className="grow flex items-center truncate mb-2">
-                    <div className="w-8 h-8 shrink-0 flex items-center justify-center bg-slate-700 rounded-full mr-2">
-                      <img
-                        className="ml-1"
-                        src=""
-                        width="14"
-                        height="14"
-                        alt="Icon 02"
-                      />
-                    </div>
-                    <div className="truncate">
-                      <span className="text-sm font-medium text-slate-800">
-                        Acme Product
-                      </span>
-                    </div>
-                  </div>
-                  {/* Card content */}
-                  <div className="text-sm mb-3">
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore.
-                  </div>
-                  {/* Card footer */}
-                  <div className="flex justify-between items-center">
-                    {/* Avatars group */}
-                    <div className="flex -space-x-3 -ml-0.5">
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                      <img
-                        className="rounded-full border-2 border-white box-content"
-                        src=""
-                        width="24"
-                        height="24"
-                        alt="Avatar"
-                      />
-                    </div>
-                    {/* Link */}
-                    <div>
-                      <a
-                        className="text-sm font-medium text-indigo-500 hover:text-indigo-600"
-                        href="#0"
-                      >
-                        View -&gt;
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>

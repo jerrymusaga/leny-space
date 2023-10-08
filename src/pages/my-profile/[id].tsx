@@ -8,7 +8,7 @@ import { useProfileQuery } from "../../graphql/generated";
 type Props = {};
 
 export default function MyProfilePage({}: Props) {
-  const { isSignedInQuery, profileQuery } = useLensUser();
+  const { isSignedInQuery } = useLensUser();
   const router = useRouter();
   // Grab the path / [id] field from the URL
   const { id } = router.query;

@@ -65,7 +65,9 @@ export default function Login() {
         </div>
         <div className="flex mt-5 justify-between">
           <form onSubmit={handleLogin}>
-            <label htmlFor="email">Email</label>
+            <label className="text-white" htmlFor="email">
+              Email
+            </label>
             <input
               name="email"
               type="email"

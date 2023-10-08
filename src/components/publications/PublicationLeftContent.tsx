@@ -64,10 +64,7 @@ function PublicationLeftContent() {
               </div>
               <ul className="flex flex-nowrap md:block mr-3 md:mr-0">
                 <li className="mr-0.5 md:mr-0 md:mb-0.5">
-                  <a
-                    className="flex items-center px-2.5 py-2 rounded whitespace-nowrap bg-white"
-                    href=""
-                  >
+                  <p className="flex items-center px-2.5 py-2 rounded whitespace-nowrap bg-white">
                     <svg
                       className="w-4 h-4 shrink-0 fill-current text-indigo-500 mr-2"
                       viewBox="0 0 16 16"
@@ -77,13 +74,10 @@ function PublicationLeftContent() {
                     <span className="text-sm font-medium text-indigo-500">
                       Home
                     </span>
-                  </a>
+                  </p>
                 </li>
                 <li className="mr-0.5 md:mr-0 md:mb-0.5">
-                  <a
-                    className="flex items-center px-2.5 py-2 rounded whitespace-nowrap"
-                    href=""
-                  >
+                  <p className="flex items-center px-2.5 py-2 rounded whitespace-nowrap">
                     <svg
                       className="w-4 h-4 shrink-0 fill-current text-slate-400 mr-2"
                       viewBox="0 0 16 16"
@@ -93,13 +87,10 @@ function PublicationLeftContent() {
                     <span className="text-sm font-medium text-slate-600">
                       Explore
                     </span>
-                  </a>
+                  </p>
                 </li>
                 <li className="mr-0.5 md:mr-0 md:mb-0.5">
-                  <a
-                    className="flex items-center px-2.5 py-2  whitespace-nowrap"
-                    href=""
-                  >
+                  <p className="flex items-center px-2.5 py-2  whitespace-nowrap">
                     <svg
                       className="w-4 h-4 shrink-0 fill-current text-slate-400 mr-2"
                       viewBox="0 0 16 16"
@@ -109,14 +100,11 @@ function PublicationLeftContent() {
                     <span className="text-sm font-medium text-slate-600">
                       Notifications
                     </span>
-                  </a>
+                  </p>
                 </li>
 
                 <li className="mr-0.5 md:mr-0 md:mb-0.5">
-                  <a
-                    className="flex items-center px-2.5 py-2 rounded whitespace-nowrap"
-                    href=""
-                  >
+                  <p className="flex items-center px-2.5 py-2 rounded whitespace-nowrap">
                     <svg
                       className="w-4 h-4 shrink-0 fill-current text-slate-400 mr-2"
                       viewBox="0 0 16 16"
@@ -126,7 +114,7 @@ function PublicationLeftContent() {
                     <span className="text-sm font-medium text-slate-600">
                       <WalletConnect />
                     </span>
-                  </a>
+                  </p>
                 </li>
 
                 <button

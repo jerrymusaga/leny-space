@@ -55,7 +55,7 @@ export default function Login() {
           <h1 className="text-white text-5xl font-bold">
             Passwordless Decentralized <br /> Social Media powered by <br />
             <span className="text-gradient">Lens</span> Protocol &
-            <span className="text-gradient">Magic</span>
+            <span className="text-gradient"> Magic</span>
           </h1>
           <p className="text-gray-500 font-semibold text-sm mt-3">
             Gain Rewards on amazing Publications only on Leny-Space. Sign In
